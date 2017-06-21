@@ -58,6 +58,21 @@ export const NgSearchboxAddedFilterStyle: string[] = [`:host > div.ng-searchbox-
   margin-right: 5px;
 }
 `];
+export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
+  padding: 0 0 8px 7px;
+  background: #E1F0FD;
+  border-radius: 6px;
+  margin-top: 7px;
+  margin-bottom: 4px;
+  display: none;
+}
+:host.active {
+  display: block;
+}
+:host div.ng-searchbox-added-filters {
+  display: none;
+}
+`];
 export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
   float: left;
 }
@@ -110,21 +125,6 @@ export const NgSearchboxFilterSelectorsStyle: string[] = [`:host div.ng-searchbo
 }
 :host div.ng-searchbox-filter-selectors ul li:nth-child(odd) {
   background: #E1F0FD;
-}
-`];
-export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
-  padding: 0 0 8px 7px;
-  background: #E1F0FD;
-  border-radius: 6px;
-  margin-top: 7px;
-  margin-bottom: 4px;
-  display: none;
-}
-:host.active {
-  display: block;
-}
-:host div.ng-searchbox-added-filters {
-  display: none;
 }
 `];
 export const NgSearchboxFilteringStyle: string[] = [`:host {
