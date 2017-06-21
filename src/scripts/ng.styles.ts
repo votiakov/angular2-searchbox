@@ -1,33 +1,5 @@
 'use strict';
 
-export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
-  float: left;
-}
-:host div.ng-searchbox-added-filter-operator {
-  background: #FFF;
-  border-radius: 6px;
-  margin-right: 10px;
-  margin-top: 8px;
-}
-:host div.ng-searchbox-added-filter-operator span {
-  padding: 5px 6px 5px 6px;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  display: block;
-}
-:host div.ng-searchbox-added-filter-operator span i.fa-arrow-left {
-  margin-right: 5px;
-  color: rgba(0, 0, 0, 0.75);
-}
-:host div.ng-searchbox-added-filter-operator span i.fa-arrow-right {
-  margin-left: 5px;
-  color: rgba(0, 0, 0, 0.75);
-}
-:host div.ng-searchbox-added-filter-operator div.ng-searchbox-filter-operators-wrapper {
-  position: absolute;
-}
-`];
 export const NgSearchboxAddedFilterStyle: string[] = [`:host > div.ng-searchbox-added-filter {
   display: block;
   float: left;
@@ -99,6 +71,34 @@ export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
 }
 :host div.ng-searchbox-added-filters {
   display: none;
+}
+`];
+export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
+  float: left;
+}
+:host div.ng-searchbox-added-filter-operator {
+  background: #FFF;
+  border-radius: 6px;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+:host div.ng-searchbox-added-filter-operator span {
+  padding: 5px 6px 5px 6px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  display: block;
+}
+:host div.ng-searchbox-added-filter-operator span i.fa-arrow-left {
+  margin-right: 5px;
+  color: rgba(0, 0, 0, 0.75);
+}
+:host div.ng-searchbox-added-filter-operator span i.fa-arrow-right {
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.75);
+}
+:host div.ng-searchbox-added-filter-operator div.ng-searchbox-filter-operators-wrapper {
+  position: absolute;
 }
 `];
 export const NgSearchboxFilterSelectorsStyle: string[] = [`:host div.ng-searchbox-filter-selectors {

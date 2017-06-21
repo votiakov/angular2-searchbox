@@ -22,6 +22,8 @@ var NgSearchboxFilterSelectors = (function () {
     function NgSearchboxFilterSelectors(ngAddedFilter) {
         this.ngAddedFilter = ngAddedFilter;
         this.filter = null;
+        this.observer = null;
+        this.searchbox = null;
         this.selectors = _.clone(search_1.SELECTORS);
         return this;
     }
@@ -91,6 +93,23 @@ var NgSearchboxFilterSelectors = (function () {
         return this;
     };
     NgSearchboxFilterSelectors.prototype.ngAfterViewInit = function () {
+        var self = this;
+        this
+            .observer
+            .subscribe(function (change) {
+            switch (change.name) {
+                case search_1.Search.InformationChange:
+                    var data = change.data;
+                    self.searchbox = data.component;
+                    if (self.searchbox && self.searchbox.ngSearchBoxFilterSelectors && self.searchbox.ngSearchBoxFilterSelectors.length) {
+                        self.selectors = self.searchbox.ngSearchBoxFilterSelectors;
+                    }
+                    break;
+            }
+            // self
+            //   .changeDetectionRef
+            //   .detectChanges();
+        });
         this
             .getDefaultSelector();
     };
@@ -100,6 +119,10 @@ __decorate([
     core_1.Input('filter'),
     __metadata("design:type", Object)
 ], NgSearchboxFilterSelectors.prototype, "filter", void 0);
+__decorate([
+    core_1.Input('observer'),
+    __metadata("design:type", core_1.EventEmitter)
+], NgSearchboxFilterSelectors.prototype, "observer", void 0);
 NgSearchboxFilterSelectors = __decorate([
     core_1.Component({
         'selector': 'ng-searchbox-filter-selectors',
