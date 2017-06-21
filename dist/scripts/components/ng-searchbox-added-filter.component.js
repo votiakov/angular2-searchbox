@@ -11,10 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
-var utils_service_1 = require('../services/utils.service');
-var ng_templates_1 = require('../ng.templates');
-var ng_styles_1 = require('../ng.styles');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var utils_service_1 = require("../services/utils.service");
+var ng_templates_1 = require("../ng.templates");
+var ng_styles_1 = require("../ng.styles");
 var NgSearchboxAddedFilter = (function () {
     function NgSearchboxAddedFilter(utils, window) {
         this.utils = utils;
@@ -182,22 +183,23 @@ var NgSearchboxAddedFilter = (function () {
             .Filtering
             .removeByComponent(this);
     };
-    __decorate([
-        core_1.ViewChild('ngSearchboxAddedFilter'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], NgSearchboxAddedFilter.prototype, "ngSearchboxAddedFilter");
-    NgSearchboxAddedFilter = __decorate([
-        core_1.Component({
-            'selector': 'ng-searchbox-added-filter',
-            'template': ng_templates_1.NgSearchboxAddedFilterTemplate,
-            'styles': ng_styles_1.NgSearchboxAddedFilterStyle,
-            'providers': [
-                utils_service_1.UtilsService
-            ]
-        }),
-        __param(1, core_1.Inject(Window)), 
-        __metadata('design:paramtypes', [utils_service_1.UtilsService, Window])
-    ], NgSearchboxAddedFilter);
     return NgSearchboxAddedFilter;
 }());
+__decorate([
+    core_1.ViewChild('ngSearchboxAddedFilter'),
+    __metadata("design:type", core_1.ElementRef)
+], NgSearchboxAddedFilter.prototype, "ngSearchboxAddedFilter", void 0);
+NgSearchboxAddedFilter = __decorate([
+    core_1.Component({
+        'selector': 'ng-searchbox-added-filter',
+        'template': ng_templates_1.NgSearchboxAddedFilterTemplate,
+        'styles': ng_styles_1.NgSearchboxAddedFilterStyle,
+        'providers': [
+            utils_service_1.UtilsService
+        ]
+    }),
+    __param(1, core_1.Inject(Window)),
+    __metadata("design:paramtypes", [utils_service_1.UtilsService,
+        Window])
+], NgSearchboxAddedFilter);
 exports.NgSearchboxAddedFilter = NgSearchboxAddedFilter;

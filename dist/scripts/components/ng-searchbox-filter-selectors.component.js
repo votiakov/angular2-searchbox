@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _ = require('lodash');
-var core_1 = require('@angular/core');
-var ng_searchbox_added_filter_component_1 = require('../components/ng-searchbox-added-filter.component');
-var ng_templates_1 = require('../ng.templates');
-var ng_styles_1 = require('../ng.styles');
-var search_1 = require('../definitions/search');
+Object.defineProperty(exports, "__esModule", { value: true });
+var _ = require("lodash");
+var core_1 = require("@angular/core");
+var ng_searchbox_added_filter_component_1 = require("../components/ng-searchbox-added-filter.component");
+var ng_templates_1 = require("../ng.templates");
+var ng_styles_1 = require("../ng.styles");
+var search_1 = require("../definitions/search");
 var NgSearchboxFilterSelectors = (function () {
     function NgSearchboxFilterSelectors(ngAddedFilter) {
         this.ngAddedFilter = ngAddedFilter;
@@ -93,19 +94,19 @@ var NgSearchboxFilterSelectors = (function () {
         this
             .getDefaultSelector();
     };
-    __decorate([
-        core_1.Input('filter'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxFilterSelectors.prototype, "filter");
-    NgSearchboxFilterSelectors = __decorate([
-        core_1.Component({
-            'selector': 'ng-searchbox-filter-selectors',
-            'template': ng_templates_1.NgSearchboxFilterSelectorsTemplate,
-            'styles': ng_styles_1.NgSearchboxFilterSelectorsStyle
-        }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter; }))), 
-        __metadata('design:paramtypes', [ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter])
-    ], NgSearchboxFilterSelectors);
     return NgSearchboxFilterSelectors;
 }());
+__decorate([
+    core_1.Input('filter'),
+    __metadata("design:type", Object)
+], NgSearchboxFilterSelectors.prototype, "filter", void 0);
+NgSearchboxFilterSelectors = __decorate([
+    core_1.Component({
+        'selector': 'ng-searchbox-filter-selectors',
+        'template': ng_templates_1.NgSearchboxFilterSelectorsTemplate,
+        'styles': ng_styles_1.NgSearchboxFilterSelectorsStyle
+    }),
+    __param(0, core_1.Inject(core_1.forwardRef(function () { return ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter; }))),
+    __metadata("design:paramtypes", [ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter])
+], NgSearchboxFilterSelectors);
 exports.NgSearchboxFilterSelectors = NgSearchboxFilterSelectors;

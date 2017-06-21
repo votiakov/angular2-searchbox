@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _ = require('lodash');
-var core_1 = require('@angular/core');
-var ng_searchbox_component_1 = require('../components/ng-searchbox.component');
-var ng_searchbox_added_filter_component_1 = require('../components/ng-searchbox-added-filter.component');
-var validation_service_1 = require('../services/validation.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var _ = require("lodash");
+var core_1 = require("@angular/core");
+var ng_searchbox_component_1 = require("../components/ng-searchbox.component");
+var ng_searchbox_added_filter_component_1 = require("../components/ng-searchbox-added-filter.component");
+var validation_service_1 = require("../services/validation.service");
 var validation = new validation_service_1.ValidationService();
 var FilteringService = (function () {
     function FilteringService(searchbox) {
@@ -268,10 +269,10 @@ var FilteringService = (function () {
         }
         this.params = params;
     };
-    FilteringService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [ng_searchbox_component_1.NgSearchboxComponent])
-    ], FilteringService);
     return FilteringService;
 }());
+FilteringService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [ng_searchbox_component_1.NgSearchboxComponent])
+], FilteringService);
 exports.FilteringService = FilteringService;

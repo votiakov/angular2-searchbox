@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var UtilsService = (function () {
     function UtilsService(window) {
         this.window = window;
@@ -80,11 +81,11 @@ var UtilsService = (function () {
             parseInt(this.getCSSProperty(element, 'border-left')) +
             parseInt(this.getCSSProperty(element, 'border-right'));
     };
-    UtilsService = __decorate([
-        core_1.Injectable(),
-        __param(0, core_1.Inject(Window)), 
-        __metadata('design:paramtypes', [Window])
-    ], UtilsService);
     return UtilsService;
 }());
+UtilsService = __decorate([
+    core_1.Injectable(),
+    __param(0, core_1.Inject(Window)),
+    __metadata("design:paramtypes", [Window])
+], UtilsService);
 exports.UtilsService = UtilsService;

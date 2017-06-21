@@ -11,17 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
-var ng_templates_1 = require('../ng.templates');
-var ng_styles_1 = require('../ng.styles');
-var utils_service_1 = require('../services/utils.service');
-var event_handling_service_1 = require('../services/event-handling.service');
-var api_service_1 = require('../services/api.service');
-var filtering_service_1 = require('../services/filtering.service');
-var placeholders_service_1 = require('../services/placeholders.service');
-var search_1 = require('../definitions/search');
-var ng_searchbox_added_filters_wrapper_component_1 = require('./ng-searchbox-added-filters-wrapper.component');
-var memory_service_1 = require('../services/memory.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var ng_templates_1 = require("../ng.templates");
+var ng_styles_1 = require("../ng.styles");
+var utils_service_1 = require("../services/utils.service");
+var event_handling_service_1 = require("../services/event-handling.service");
+var api_service_1 = require("../services/api.service");
+var filtering_service_1 = require("../services/filtering.service");
+var placeholders_service_1 = require("../services/placeholders.service");
+var search_1 = require("../definitions/search");
+var ng_searchbox_added_filters_wrapper_component_1 = require("./ng-searchbox-added-filters-wrapper.component");
+var memory_service_1 = require("../services/memory.service");
 var NgSearchboxComponent = (function () {
     function NgSearchboxComponent(element, memory, changeDetectorRef, utils, window) {
         this.element = element;
@@ -220,63 +221,67 @@ var NgSearchboxComponent = (function () {
                 .onGarbage();
         }
     };
-    __decorate([
-        core_1.ViewChild('ngSearchboxAddedFiltersWrapper'), 
-        __metadata('design:type', ng_searchbox_added_filters_wrapper_component_1.NgSearchboxAddedFiltersWrapper)
-    ], NgSearchboxComponent.prototype, "ngSearchboxAddedFiltersWrapper");
-    __decorate([
-        core_1.Input('searchParams'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxComponent.prototype, "searchParams");
-    __decorate([
-        core_1.Input('ngSearchBoxFiltering'), 
-        __metadata('design:type', Array)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxFiltering");
-    __decorate([
-        core_1.Input('ngSearchBoxConfig'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxConfig");
-    __decorate([
-        core_1.Input('ngSearchBoxAutoComplete'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxAutoComplete");
-    __decorate([
-        core_1.Input('ngSearchBoxCacheFilter'), 
-        __metadata('design:type', Boolean)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxCacheFilter");
-    __decorate([
-        core_1.Input('ngSearchBoxEnableFilterOperators'), 
-        __metadata('design:type', Boolean)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxEnableFilterOperators");
-    __decorate([
-        core_1.Input('ngSearchBoxFilterSelectors'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxFilterSelectors");
-    __decorate([
-        core_1.Input('ngSearchBoxFilterOperators'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxComponent.prototype, "ngSearchBoxFilterOperators");
-    __decorate([
-        core_1.Input('placeholder'), 
-        __metadata('design:type', String)
-    ], NgSearchboxComponent.prototype, "placeholder");
-    __decorate([
-        core_1.Output('onRegisterApi'), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], NgSearchboxComponent.prototype, "onRegisterApi");
-    NgSearchboxComponent = __decorate([
-        core_1.Component({
-            'selector': 'ng-searchbox',
-            'template': ng_templates_1.NgSearchboxTemplate,
-            'styles': ng_styles_1.NgSearchboxStyle,
-            'providers': [
-                memory_service_1.MemoryService,
-                utils_service_1.UtilsService
-            ]
-        }),
-        __param(4, core_1.Inject(Window)), 
-        __metadata('design:paramtypes', [core_1.ElementRef, memory_service_1.MemoryService, core_1.ChangeDetectorRef, utils_service_1.UtilsService, Window])
-    ], NgSearchboxComponent);
     return NgSearchboxComponent;
 }());
+__decorate([
+    core_1.ViewChild('ngSearchboxAddedFiltersWrapper'),
+    __metadata("design:type", ng_searchbox_added_filters_wrapper_component_1.NgSearchboxAddedFiltersWrapper)
+], NgSearchboxComponent.prototype, "ngSearchboxAddedFiltersWrapper", void 0);
+__decorate([
+    core_1.Input('searchParams'),
+    __metadata("design:type", Object)
+], NgSearchboxComponent.prototype, "searchParams", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxFiltering'),
+    __metadata("design:type", Array)
+], NgSearchboxComponent.prototype, "ngSearchBoxFiltering", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxConfig'),
+    __metadata("design:type", Object)
+], NgSearchboxComponent.prototype, "ngSearchBoxConfig", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxAutoComplete'),
+    __metadata("design:type", Object)
+], NgSearchboxComponent.prototype, "ngSearchBoxAutoComplete", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxCacheFilter'),
+    __metadata("design:type", Boolean)
+], NgSearchboxComponent.prototype, "ngSearchBoxCacheFilter", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxEnableFilterOperators'),
+    __metadata("design:type", Boolean)
+], NgSearchboxComponent.prototype, "ngSearchBoxEnableFilterOperators", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxFilterSelectors'),
+    __metadata("design:type", Object)
+], NgSearchboxComponent.prototype, "ngSearchBoxFilterSelectors", void 0);
+__decorate([
+    core_1.Input('ngSearchBoxFilterOperators'),
+    __metadata("design:type", Object)
+], NgSearchboxComponent.prototype, "ngSearchBoxFilterOperators", void 0);
+__decorate([
+    core_1.Input('placeholder'),
+    __metadata("design:type", String)
+], NgSearchboxComponent.prototype, "placeholder", void 0);
+__decorate([
+    core_1.Output('onRegisterApi'),
+    __metadata("design:type", core_1.EventEmitter)
+], NgSearchboxComponent.prototype, "onRegisterApi", void 0);
+NgSearchboxComponent = __decorate([
+    core_1.Component({
+        'selector': 'ng-searchbox',
+        'template': ng_templates_1.NgSearchboxTemplate,
+        'styles': ng_styles_1.NgSearchboxStyle,
+        'providers': [
+            memory_service_1.MemoryService,
+            utils_service_1.UtilsService
+        ]
+    }),
+    __param(4, core_1.Inject(Window)),
+    __metadata("design:paramtypes", [core_1.ElementRef,
+        memory_service_1.MemoryService,
+        core_1.ChangeDetectorRef,
+        utils_service_1.UtilsService,
+        Window])
+], NgSearchboxComponent);
 exports.NgSearchboxComponent = NgSearchboxComponent;

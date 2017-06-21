@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _ = require('lodash');
-var core_1 = require('@angular/core');
-var ng_templates_1 = require('../ng.templates');
-var ng_styles_1 = require('../ng.styles');
-var ng_searchbox_added_filter_component_1 = require('./ng-searchbox-added-filter.component');
-var search_1 = require('../definitions/search');
+Object.defineProperty(exports, "__esModule", { value: true });
+var _ = require("lodash");
+var core_1 = require("@angular/core");
+var ng_templates_1 = require("../ng.templates");
+var ng_styles_1 = require("../ng.styles");
+var ng_searchbox_added_filter_component_1 = require("./ng-searchbox-added-filter.component");
+var search_1 = require("../definitions/search");
 var NgSearchboxFilterOperators = (function () {
     function NgSearchboxFilterOperators(ngAddedFilter, window, element) {
         this.ngAddedFilter = ngAddedFilter;
@@ -136,20 +137,22 @@ var NgSearchboxFilterOperators = (function () {
                 .addOperatorToFilter();
         }
     };
-    __decorate([
-        core_1.Input('filter'), 
-        __metadata('design:type', Object)
-    ], NgSearchboxFilterOperators.prototype, "filter");
-    NgSearchboxFilterOperators = __decorate([
-        core_1.Component({
-            'selector': 'ng-searchbox-filter-operators',
-            'template': ng_templates_1.NgSearchboxFilterOperatorsTemplate,
-            'styles': ng_styles_1.NgSearchboxFilterOperatorsStyle
-        }),
-        __param(0, core_1.Inject(core_1.forwardRef(function () { return ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter; }))),
-        __param(1, core_1.Inject(Window)), 
-        __metadata('design:paramtypes', [ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter, Window, core_1.ElementRef])
-    ], NgSearchboxFilterOperators);
     return NgSearchboxFilterOperators;
 }());
+__decorate([
+    core_1.Input('filter'),
+    __metadata("design:type", Object)
+], NgSearchboxFilterOperators.prototype, "filter", void 0);
+NgSearchboxFilterOperators = __decorate([
+    core_1.Component({
+        'selector': 'ng-searchbox-filter-operators',
+        'template': ng_templates_1.NgSearchboxFilterOperatorsTemplate,
+        'styles': ng_styles_1.NgSearchboxFilterOperatorsStyle
+    }),
+    __param(0, core_1.Inject(core_1.forwardRef(function () { return ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter; }))),
+    __param(1, core_1.Inject(Window)),
+    __metadata("design:paramtypes", [ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter,
+        Window,
+        core_1.ElementRef])
+], NgSearchboxFilterOperators);
 exports.NgSearchboxFilterOperators = NgSearchboxFilterOperators;

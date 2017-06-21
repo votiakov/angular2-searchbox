@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var api_service_1 = require('./api.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var api_service_1 = require("./api.service");
 var EventHandling = (function () {
     function EventHandling(api) {
         this.api = api;
@@ -93,10 +94,10 @@ var EventHandling = (function () {
         this.fire('onOperatorChanged', opts);
         return this;
     };
-    EventHandling = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [api_service_1.API])
-    ], EventHandling);
     return EventHandling;
 }());
+EventHandling = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [api_service_1.API])
+], EventHandling);
 exports.EventHandling = EventHandling;

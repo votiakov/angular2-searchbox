@@ -1,4 +1,5 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 function hasEventErrors(evt, fn, emptyFnAllowed) {
     if (emptyFnAllowed === void 0) { emptyFnAllowed = false; }
     if (typeof evt !== 'string') {

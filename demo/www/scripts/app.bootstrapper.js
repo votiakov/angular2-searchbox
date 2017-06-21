@@ -1,6 +1,7 @@
 'use strict';
-var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
-var app_module_1 = require('./app.module');
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
+var app_module_1 = require("./app.module");
 var bootstrapper;
 var Bootstrapper = (function () {
     function Bootstrapper() {

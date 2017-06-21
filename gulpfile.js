@@ -34,45 +34,55 @@ var gulp = require('gulp'),
 
   chalk = require('chalk');
 
-var tsProject = ts.createProject({
+var tsProject = ts.createProject('tsconfig.json');
+var tsDemoProject = tsProject;
+// var tsProject = ts.createProject({
 
-  'sourceMap': true,
+//   'sourceMap': true,
 
-  'emitDecoratorMetadata': true,
+//   'emitDecoratorMetadata': true,
 
-  'experimentalDecorators': true,
+//   'experimentalDecorators': true,
 
-  'removeComments': false,
+//   'removeComments': false,
 
-  'noImplicitAny': false,
+//   'noImplicitAny': false,
 
-  'moduleResolution': 'node',
+//   'moduleResolution': 'node',
 
-  'module': 'commonjs',
+//   'module': 'commonjs',
 
-  'declaration': true
+//   'declaration': true,
 
-}),
+//   'target': 'es5',
 
-  tsDemoProject = ts.createProject({
+//   'lib': ['dom', 'es6']
 
-    'sourceMap': true,
+// }),
 
-    'emitDecoratorMetadata': true,
+//   tsDemoProject = ts.createProject({
 
-    'experimentalDecorators': true,
+//     'sourceMap': true,
 
-    'removeComments': false,
+//     'emitDecoratorMetadata': true,
 
-    'noImplicitAny': false,
+//     'experimentalDecorators': true,
 
-    'moduleResolution': 'node',
+//     'removeComments': false,
 
-    'module': 'commonjs',
+//     'noImplicitAny': false,
 
-    'declaration': true
+//     'moduleResolution': 'node',
 
-  });
+//     'module': 'commonjs',
+
+//     'declaration': true,
+
+//     'target': 'es5',
+
+//     'lib': ['dom', 'es6']
+
+//   });
 
 gulp.task('watch', function () {
 
@@ -252,7 +262,7 @@ function buildTs (cb) {
   var tsResult = gulp
     .src(['src/**/*.ts', 'src/**/*.d.ts'])
     .pipe(msg.info('Compiling: <%= file.relative %>'))
-    .pipe(ts(tsProject));
+    .pipe(tsProject());
 
   merge([
 
@@ -296,7 +306,7 @@ function buildTsDemo (cb) {
     var tsResult = gulp
       .src('demo/src/**/*.ts')
       .pipe(msg.info('Compiling Demo: <%= file.relative %>'))
-      .pipe(ts(tsDemoProject));
+      .pipe(tsProject());
 
     merge([
 
@@ -347,11 +357,6 @@ function watch (cb) {
 }
 
 function doCopy (cb) {
-
-  gulp
-    .src(['src/typings/**/*'])
-    .pipe(msg.note('Copying typings for demo: <%= file.relative %>'))
-    .pipe(gulp.dest('demo/src/typings'));
 
   gulp
     .src(['demo/src/**/*.html'])

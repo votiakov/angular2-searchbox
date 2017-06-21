@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ng_templates_1 = require('../ng.templates');
-var ng_styles_1 = require('../ng.styles');
-var ng_searchbox_added_filter_component_1 = require('./ng-searchbox-added-filter.component');
-var search_1 = require('../definitions/search');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var ng_templates_1 = require("../ng.templates");
+var ng_styles_1 = require("../ng.styles");
+var ng_searchbox_added_filter_component_1 = require("./ng-searchbox-added-filter.component");
+var search_1 = require("../definitions/search");
 var NgSearchboxAddedFiltersWrapper = (function () {
     function NgSearchboxAddedFiltersWrapper(componentFactoryResolver, changeDetectionRef) {
         this.componentFactoryResolver = componentFactoryResolver;
@@ -43,29 +44,30 @@ var NgSearchboxAddedFiltersWrapper = (function () {
                 .detectChanges();
         });
     };
-    __decorate([
-        core_1.ViewChild('ngSearchboxAddedFilters', { 'read': core_1.ViewContainerRef }), 
-        __metadata('design:type', core_1.ViewContainerRef)
-    ], NgSearchboxAddedFiltersWrapper.prototype, "ngSearchboxAddedFiltersViewContainer");
-    __decorate([
-        core_1.ViewChild('ngSearchboxAddedFilters'), 
-        __metadata('design:type', NgSearchboxAddedFiltersWrapper)
-    ], NgSearchboxAddedFiltersWrapper.prototype, "ngSearchboxAddedFilters");
-    __decorate([
-        core_1.Input('observer'), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], NgSearchboxAddedFiltersWrapper.prototype, "observer");
-    NgSearchboxAddedFiltersWrapper = __decorate([
-        core_1.Component({
-            'selector': 'ng-searchbox-added-filters-wrapper',
-            'template': ng_templates_1.NgSearchboxAddedFiltersWrapperTemplate,
-            'entryComponents': [
-                ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter
-            ],
-            'styles': ng_styles_1.NgSearchboxAddedFiltersWrapperStyle
-        }), 
-        __metadata('design:paramtypes', [core_1.ComponentFactoryResolver, core_1.ChangeDetectorRef])
-    ], NgSearchboxAddedFiltersWrapper);
     return NgSearchboxAddedFiltersWrapper;
 }());
+__decorate([
+    core_1.ViewChild('ngSearchboxAddedFilters', { 'read': core_1.ViewContainerRef }),
+    __metadata("design:type", core_1.ViewContainerRef)
+], NgSearchboxAddedFiltersWrapper.prototype, "ngSearchboxAddedFiltersViewContainer", void 0);
+__decorate([
+    core_1.ViewChild('ngSearchboxAddedFilters'),
+    __metadata("design:type", NgSearchboxAddedFiltersWrapper)
+], NgSearchboxAddedFiltersWrapper.prototype, "ngSearchboxAddedFilters", void 0);
+__decorate([
+    core_1.Input('observer'),
+    __metadata("design:type", core_1.EventEmitter)
+], NgSearchboxAddedFiltersWrapper.prototype, "observer", void 0);
+NgSearchboxAddedFiltersWrapper = __decorate([
+    core_1.Component({
+        'selector': 'ng-searchbox-added-filters-wrapper',
+        'template': ng_templates_1.NgSearchboxAddedFiltersWrapperTemplate,
+        'entryComponents': [
+            ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter
+        ],
+        'styles': ng_styles_1.NgSearchboxAddedFiltersWrapperStyle
+    }),
+    __metadata("design:paramtypes", [core_1.ComponentFactoryResolver,
+        core_1.ChangeDetectorRef])
+], NgSearchboxAddedFiltersWrapper);
 exports.NgSearchboxAddedFiltersWrapper = NgSearchboxAddedFiltersWrapper;

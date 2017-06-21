@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ng_templates_1 = require('../ng.templates');
-var ng_styles_1 = require('../ng.styles');
-var search_1 = require('../definitions/search');
-var utils_service_1 = require('../services/utils.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var ng_templates_1 = require("../ng.templates");
+var ng_styles_1 = require("../ng.styles");
+var search_1 = require("../definitions/search");
+var utils_service_1 = require("../services/utils.service");
 var NgSearchboxFilteringComponent = (function () {
     function NgSearchboxFilteringComponent(changeDetectionRef, utils, zone) {
         this.changeDetectionRef = changeDetectionRef;
@@ -138,31 +139,33 @@ var NgSearchboxFilteringComponent = (function () {
             });
         }
     };
-    __decorate([
-        core_1.ViewChild('ngSearchboxFilteringList'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], NgSearchboxFilteringComponent.prototype, "ngSearchboxFilteringList");
-    __decorate([
-        core_1.Input('observer'), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], NgSearchboxFilteringComponent.prototype, "observer");
-    __decorate([
-        core_1.HostListener('window:resize', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
-        __metadata('design:returntype', void 0)
-    ], NgSearchboxFilteringComponent.prototype, "handleResize");
-    NgSearchboxFilteringComponent = __decorate([
-        core_1.Component({
-            'selector': 'ng-searchbox-filtering',
-            'template': ng_templates_1.NgSearchboxFilteringTemplate,
-            'styles': ng_styles_1.NgSearchboxFilteringStyle,
-            'providers': [
-                utils_service_1.UtilsService
-            ]
-        }), 
-        __metadata('design:paramtypes', [core_1.ChangeDetectorRef, utils_service_1.UtilsService, core_1.NgZone])
-    ], NgSearchboxFilteringComponent);
     return NgSearchboxFilteringComponent;
 }());
+__decorate([
+    core_1.ViewChild('ngSearchboxFilteringList'),
+    __metadata("design:type", core_1.ElementRef)
+], NgSearchboxFilteringComponent.prototype, "ngSearchboxFilteringList", void 0);
+__decorate([
+    core_1.Input('observer'),
+    __metadata("design:type", core_1.EventEmitter)
+], NgSearchboxFilteringComponent.prototype, "observer", void 0);
+__decorate([
+    core_1.HostListener('window:resize', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], NgSearchboxFilteringComponent.prototype, "handleResize", null);
+NgSearchboxFilteringComponent = __decorate([
+    core_1.Component({
+        'selector': 'ng-searchbox-filtering',
+        'template': ng_templates_1.NgSearchboxFilteringTemplate,
+        'styles': ng_styles_1.NgSearchboxFilteringStyle,
+        'providers': [
+            utils_service_1.UtilsService
+        ]
+    }),
+    __metadata("design:paramtypes", [core_1.ChangeDetectorRef,
+        utils_service_1.UtilsService,
+        core_1.NgZone])
+], NgSearchboxFilteringComponent);
 exports.NgSearchboxFilteringComponent = NgSearchboxFilteringComponent;

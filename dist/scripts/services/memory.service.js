@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var MemoryService = (function () {
     function MemoryService(window) {
         this.window = window;
@@ -63,11 +64,11 @@ var MemoryService = (function () {
             .storage
             .setItem(this.hash, JSON.stringify(obj));
     };
-    MemoryService = __decorate([
-        core_1.Injectable(),
-        __param(0, core_1.Inject(Window)), 
-        __metadata('design:paramtypes', [Window])
-    ], MemoryService);
     return MemoryService;
 }());
+MemoryService = __decorate([
+    core_1.Injectable(),
+    __param(0, core_1.Inject(Window)),
+    __metadata("design:paramtypes", [Window])
+], MemoryService);
 exports.MemoryService = MemoryService;

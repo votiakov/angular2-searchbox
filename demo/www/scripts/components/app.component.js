@@ -5,10 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.tybFilters = [
@@ -87,35 +85,35 @@ var AppComponent = (function () {
             .on('onQueryAdded', function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log('added', args);
         })
             .on('onEraser', function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log('eraser', args);
         })
             .on('onQueryRemoved', function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log('removed', args);
         })
             .on('onFilterChanged', function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log('filter', args);
         })
             .on('onChange', function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log('change...', args);
         });
@@ -124,14 +122,13 @@ var AppComponent = (function () {
             console.log(_this.tybFilters, _this.tybFilters.length);
         }, 1000);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            'selector': 'app',
-            'templateUrl': 'views/components/app.html',
-            'styleUrls': []
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        'selector': 'app',
+        'templateUrl': 'views/components/app.html',
+        'styleUrls': []
+    })
+], AppComponent);
 exports.AppComponent = AppComponent;
