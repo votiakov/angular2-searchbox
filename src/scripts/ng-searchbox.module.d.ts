@@ -1,3 +1,2 @@
-export declare class NgAdvancedSearchbox {
-
+export declare class NgSearchboxModule {
 }

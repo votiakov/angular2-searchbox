@@ -18,13 +18,19 @@ var ng_templates_1 = require("../ng.templates");
 var ng_styles_1 = require("../ng.styles");
 var ng_searchbox_added_filter_component_1 = require("./ng-searchbox-added-filter.component");
 var search_1 = require("../definitions/search");
+var ng_searchbox_component_1 = require("../components/ng-searchbox.component");
+var Rx_1 = require("rxjs/Rx");
 var NgSearchboxFilterOperators = (function () {
-    function NgSearchboxFilterOperators(ngAddedFilter, window, element) {
+    function NgSearchboxFilterOperators(ngAddedFilter, window, changeDetectorRef, element) {
         this.ngAddedFilter = ngAddedFilter;
         this.window = window;
+        this.changeDetectorRef = changeDetectorRef;
         this.element = element;
         this.filter = null;
+        this.searchbox = null;
+        // public operators: Search.Operator[] = _.clone(OPERATORS);
         this.operators = _.clone(search_1.OPERATORS);
+        this.operatorsSubject = new Rx_1.BehaviorSubject(this.operators);
         this.selectedOperator = null;
         this.Filtering = null;
         this.showOperators = false;
@@ -96,14 +102,16 @@ var NgSearchboxFilterOperators = (function () {
         var operatorByFilter = null, self = this;
         if (operatorByFilter === null) {
             if (!this.filter.operator) {
-                _.each(self.operators, function (operator) {
+                var operators = self.operatorsSubject.getValue();
+                _.each(operators, function (operator) {
                     if (operator.selected) {
                         self.selectedOperator = operator;
+                        return;
                     }
                 });
                 if (!self.filter.operator
-                    && self.operators && self.operators.length) {
-                    var operator = self.operators[0];
+                    && operators && operators.length) {
+                    var operator = operators[0];
                     operator.selected = true;
                     self.selectedOperator = operator;
                 }
@@ -127,6 +135,12 @@ var NgSearchboxFilterOperators = (function () {
         }
         return this;
     };
+    NgSearchboxFilterOperators.prototype.ngOnInit = function () {
+        if (this.searchbox && this.searchbox.ngSearchBoxFilterOperators && this.searchbox.ngSearchBoxFilterOperators.length) {
+            // this.operators = this.searchbox.ngSearchBoxFilterOperators;
+            this.operatorsSubject.next(this.searchbox.ngSearchBoxFilterOperators);
+        }
+    };
     NgSearchboxFilterOperators.prototype.ngAfterViewInit = function () {
         if (this.hasOperator) {
             this
@@ -143,6 +157,10 @@ __decorate([
     core_1.Input('filter'),
     __metadata("design:type", Object)
 ], NgSearchboxFilterOperators.prototype, "filter", void 0);
+__decorate([
+    core_1.Input('searchbox'),
+    __metadata("design:type", ng_searchbox_component_1.NgSearchboxComponent)
+], NgSearchboxFilterOperators.prototype, "searchbox", void 0);
 NgSearchboxFilterOperators = __decorate([
     core_1.Component({
         'selector': 'ng-searchbox-filter-operators',
@@ -153,6 +171,7 @@ NgSearchboxFilterOperators = __decorate([
     __param(1, core_1.Inject(Window)),
     __metadata("design:paramtypes", [ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter,
         Window,
+        core_1.ChangeDetectorRef,
         core_1.ElementRef])
 ], NgSearchboxFilterOperators);
 exports.NgSearchboxFilterOperators = NgSearchboxFilterOperators;

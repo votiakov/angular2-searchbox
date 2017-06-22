@@ -157,7 +157,6 @@ export class NgSearchboxFilteringComponent implements AfterViewInit {
     this
       .observer
       .subscribe((change: Search.BindingEventChange): void => {
-
         switch (change.name) {
 
           case Search.InformationChange:

@@ -9,6 +9,49 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.operators = [
+            {
+                name: "CUSTOM NOT",
+                selected: false
+            },
+            {
+                name: "CUSTOM AND",
+                selected: true
+            }, {
+                name: "CUSTOM OR",
+                selected: false
+            }
+        ];
+        this.selectors = [
+            {
+                name: "CUSTOM CONTAINS",
+                key: "contains"
+            },
+            {
+                name: "CUSTOM NOT CONTAINS",
+                key: "does_not_contain"
+            },
+            {
+                name: "CUSTOM EQUALS",
+                key: "equals"
+            },
+            {
+                name: "CUSTOM NOT EQUALS",
+                key: "not_equals"
+            },
+            {
+                name: "CUSTOM STARTS WITH",
+                key: "starts_with"
+            },
+            {
+                name: "CUSTOM ENDS WITH",
+                key: "ends_with"
+            },
+            {
+                name: "CUSTOM SIMILARITY",
+                key: "similarity"
+            },
+        ];
         this.tybFilters = [
             {
                 'name': 'cpi',

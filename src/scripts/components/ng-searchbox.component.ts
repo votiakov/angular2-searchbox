@@ -192,6 +192,8 @@ export class NgSearchboxComponent implements OnInit, OnChanges, AfterViewInit {
           .searchParams
           .filters = filters;
 
+         self.searchParams.operators = filters.map( (f) => f.$$operator).filter( (o) => return o != null );
+
         if (self.ngSearchBoxConfig && self.
           ngSearchBoxConfig
           .delay) {

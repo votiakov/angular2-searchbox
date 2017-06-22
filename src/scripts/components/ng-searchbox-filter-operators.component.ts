@@ -8,7 +8,8 @@ import {
   Inject,
   ElementRef,
   forwardRef,
-  AfterViewInit
+  AfterViewInit,
+  ChangeDetectorRef
 } from '@angular/core';
 
 import {
@@ -33,6 +34,12 @@ import {
   OPERATORS
 } from '../definitions/search';
 
+import {
+  NgSearchboxComponent
+} from '../components/ng-searchbox.component';
+
+import { BehaviorSubject } from 'rxjs/Rx';
+
 @Component({
 
   'selector': 'ng-searchbox-filter-operators',
@@ -46,8 +53,11 @@ import {
 export class NgSearchboxFilterOperators implements AfterViewInit {
 
   @Input('filter') filter: ModifiedSearch.ModifiedFilter = null;
+  @Input('searchbox') searchbox: NgSearchboxComponent = null;
 
+  // public operators: Search.Operator[] = _.clone(OPERATORS);
   public operators: Search.Operator[] = _.clone(OPERATORS);
+  public operatorsSubject: BehaviorSubject<Search.Operator[]> = new BehaviorSubject(this.operators);
 
   public selectedOperator: Search.Operator = null;
 
@@ -62,6 +72,7 @@ export class NgSearchboxFilterOperators implements AfterViewInit {
   constructor (
     @Inject(forwardRef(() => NgSearchboxAddedFilter)) private ngAddedFilter: NgSearchboxAddedFilter,
     @Inject(Window) private window: Window,
+    private changeDetectorRef: ChangeDetectorRef,
     private element: ElementRef
   ) {
 
@@ -185,11 +196,15 @@ export class NgSearchboxFilterOperators implements AfterViewInit {
 
       if (!this.filter.operator) {
 
-        _.each(self.operators, (operator: Search.Operator): void => {
+        const operators = self.operatorsSubject.getValue();
+
+        _.each(operators, (operator: Search.Operator): void => {
 
           if (operator.selected) {
 
             self.selectedOperator = operator;
+
+            return;
 
           }
 
@@ -197,9 +212,9 @@ export class NgSearchboxFilterOperators implements AfterViewInit {
 
         if (!self.filter.operator
 
-          && self.operators && self.operators.length) {
+          && operators && operators.length) {
 
-            let operator: Search.Operator = self.operators[0];
+            let operator: Search.Operator = operators[0];
 
             operator.selected = true;
 
@@ -231,6 +246,7 @@ export class NgSearchboxFilterOperators implements AfterViewInit {
       .Filtering
       .hasOperatorAlready(self.filter)) {
 
+
         this
           .Filtering
           .addOperatorToFilter(
@@ -244,8 +260,15 @@ export class NgSearchboxFilterOperators implements AfterViewInit {
 
   }
 
-  ngAfterViewInit () {
+  ngOnInit() {
+    if (this.searchbox && this.searchbox.ngSearchBoxFilterOperators && this.searchbox.ngSearchBoxFilterOperators.length) {
+      // this.operators = this.searchbox.ngSearchBoxFilterOperators;
+      this.operatorsSubject.next(this.searchbox.ngSearchBoxFilterOperators);
 
+    }
+  }
+
+  ngAfterViewInit () {
     if (this.hasOperator) {
 
       this
@@ -258,6 +281,7 @@ export class NgSearchboxFilterOperators implements AfterViewInit {
       this
         .getDefaultOperator()
         .addOperatorToFilter();
+
 
     }
 

@@ -1,20 +1,5 @@
 'use strict';
 
-export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
-  padding: 0 0 8px 7px;
-  background: #E1F0FD;
-  border-radius: 6px;
-  margin-top: 7px;
-  margin-bottom: 4px;
-  display: none;
-}
-:host.active {
-  display: block;
-}
-:host div.ng-searchbox-added-filters {
-  display: none;
-}
-`];
 export const NgSearchboxAddedFilterStyle: string[] = [`:host > div.ng-searchbox-added-filter {
   display: block;
   float: left;
@@ -99,6 +84,47 @@ export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
 }
 :host div.ng-searchbox-added-filter-operator div.ng-searchbox-filter-operators-wrapper {
   position: absolute;
+}
+`];
+export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
+  padding: 0 0 8px 7px;
+  background: #E1F0FD;
+  border-radius: 6px;
+  margin-top: 7px;
+  margin-bottom: 4px;
+  display: none;
+}
+:host.active {
+  display: block;
+}
+:host div.ng-searchbox-added-filters {
+  display: none;
+}
+`];
+export const NgSearchboxFilterSelectorsStyle: string[] = [`:host div.ng-searchbox-filter-selectors {
+  position: absolute;
+  z-index: 3;
+  margin-top: 4px;
+}
+:host div.ng-searchbox-filter-selectors ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 0;
+  display: block;
+  border-left: 1px solid #A9A9A9;
+  border-right: 1px solid #A9A9A9;
+  border-bottom: 1px solid #A9A9A9;
+  max-height: 130px;
+  overflow-y: scroll;
+}
+:host div.ng-searchbox-filter-selectors ul li {
+  padding: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+:host div.ng-searchbox-filter-selectors ul li:nth-child(odd) {
+  background: #E1F0FD;
 }
 `];
 export const NgSearchboxFilteringStyle: string[] = [`:host {
@@ -190,32 +216,6 @@ export const NgSearchboxFilteringStyle: string[] = [`:host {
   opacity: 0.6;
   font-size: 12px;
   margin-left: 10px;
-}
-`];
-export const NgSearchboxFilterSelectorsStyle: string[] = [`:host div.ng-searchbox-filter-selectors {
-  position: absolute;
-  z-index: 3;
-  margin-top: 4px;
-}
-:host div.ng-searchbox-filter-selectors ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 0 0 0;
-  display: block;
-  border-left: 1px solid #A9A9A9;
-  border-right: 1px solid #A9A9A9;
-  border-bottom: 1px solid #A9A9A9;
-  max-height: 130px;
-  overflow-y: scroll;
-}
-:host div.ng-searchbox-filter-selectors ul li {
-  padding: 5px;
-  font-size: 12px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-:host div.ng-searchbox-filter-selectors ul li:nth-child(odd) {
-  background: #E1F0FD;
 }
 `];
 export const NgSearchboxStyle: string[] = [`.ng-clearfix:after {

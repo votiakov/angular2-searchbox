@@ -5,7 +5,8 @@ div.ng-searchbox-added-filter(
     [ngIf]="searchbox && searchbox.ngSearchBoxEnableFilterOperators"
   )
     ng-searchbox-filter-operators(
-      [filter]="filter"
+      [filter]="filter",
+      [searchbox]="searchbox"
     )
   div.ng-searchbox-added-filter-contents(
     (click)="openFilter();"
@@ -44,5 +45,5 @@ div.ng-searchbox-added-filter(
     )
     ng-searchbox-filter-selectors(
       [filter]="filter",
-      [observer]="onChange"
+      [searchbox]="searchbox"
     )

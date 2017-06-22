@@ -24,6 +24,51 @@ import {
 
 export class AppComponent {
 
+  public operators: Search.Operator[] = [
+    {
+      name: "CUSTOM NOT",
+      selected: false
+    },
+    {
+      name: "CUSTOM AND",
+      selected: true
+    }, {
+      name: "CUSTOM OR",
+      selected: false
+    }
+  ];
+
+  public selectors: Search.Selector[] = [
+    {
+      name: "CUSTOM CONTAINS",
+      key: "contains"
+    },
+    {
+      name: "CUSTOM NOT CONTAINS",
+      key: "does_not_contain"
+    },
+    {
+      name: "CUSTOM EQUALS",
+      key: "equals"
+    },
+    {
+      name: "CUSTOM NOT EQUALS",
+      key: "not_equals"
+    },
+    {
+      name: "CUSTOM STARTS WITH",
+      key: "starts_with"
+    },
+    {
+      name: "CUSTOM ENDS WITH",
+      key: "ends_with"
+    },
+    {
+      name: "CUSTOM SIMILARITY",
+      key: "similarity"
+    },
+  ];
+
   public tybFilters: Search.AvailableFilter[] = [
 
     {

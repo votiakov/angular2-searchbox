@@ -18,11 +18,11 @@ var ng_searchbox_added_filter_component_1 = require("../components/ng-searchbox-
 var ng_templates_1 = require("../ng.templates");
 var ng_styles_1 = require("../ng.styles");
 var search_1 = require("../definitions/search");
+var ng_searchbox_component_1 = require("../components/ng-searchbox.component");
 var NgSearchboxFilterSelectors = (function () {
     function NgSearchboxFilterSelectors(ngAddedFilter) {
         this.ngAddedFilter = ngAddedFilter;
         this.filter = null;
-        this.observer = null;
         this.searchbox = null;
         this.selectors = _.clone(search_1.SELECTORS);
         return this;
@@ -93,23 +93,9 @@ var NgSearchboxFilterSelectors = (function () {
         return this;
     };
     NgSearchboxFilterSelectors.prototype.ngAfterViewInit = function () {
-        var self = this;
-        this
-            .observer
-            .subscribe(function (change) {
-            switch (change.name) {
-                case search_1.Search.InformationChange:
-                    var data = change.data;
-                    self.searchbox = data.component;
-                    if (self.searchbox && self.searchbox.ngSearchBoxFilterSelectors && self.searchbox.ngSearchBoxFilterSelectors.length) {
-                        self.selectors = self.searchbox.ngSearchBoxFilterSelectors;
-                    }
-                    break;
-            }
-            // self
-            //   .changeDetectionRef
-            //   .detectChanges();
-        });
+        if (this.searchbox && this.searchbox.ngSearchBoxFilterSelectors && this.searchbox.ngSearchBoxFilterSelectors.length) {
+            this.selectors = this.searchbox.ngSearchBoxFilterSelectors;
+        }
         this
             .getDefaultSelector();
     };
@@ -120,9 +106,9 @@ __decorate([
     __metadata("design:type", Object)
 ], NgSearchboxFilterSelectors.prototype, "filter", void 0);
 __decorate([
-    core_1.Input('observer'),
-    __metadata("design:type", core_1.EventEmitter)
-], NgSearchboxFilterSelectors.prototype, "observer", void 0);
+    core_1.Input('searchbox'),
+    __metadata("design:type", ng_searchbox_component_1.NgSearchboxComponent)
+], NgSearchboxFilterSelectors.prototype, "searchbox", void 0);
 NgSearchboxFilterSelectors = __decorate([
     core_1.Component({
         'selector': 'ng-searchbox-filter-selectors',

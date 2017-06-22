@@ -8,7 +8,6 @@ import {
   Inject,
   forwardRef,
   AfterViewInit,
-  EventEmitter,
 } from '@angular/core';
 
 import {
@@ -46,10 +45,7 @@ import {
 export class NgSearchboxFilterSelectors implements AfterViewInit {
 
   @Input('filter') filter: ModifiedSearch.ModifiedFilter = null;
-
-  @Input('observer') observer: EventEmitter<Search.BindingEventChange> = null;
-
-  public searchbox: NgSearchboxComponent = null;
+  @Input('searchbox') searchbox: NgSearchboxComponent = null;
 
   public selectors: Search.Selector[] = _.clone(SELECTORS);
 
@@ -165,36 +161,9 @@ export class NgSearchboxFilterSelectors implements AfterViewInit {
   }
 
   ngAfterViewInit () {
-
-    let self: NgSearchboxFilterSelectors = <NgSearchboxFilterSelectors>this;
-
-    this
-      .observer
-      .subscribe((change: Search.BindingEventChange): void => {
-
-        switch (change.name) {
-
-          case Search.InformationChange:
-
-            let data: Search.SearchBoxInformationExchange = <Search.SearchBoxInformationExchange>change.data;
-
-            self.searchbox = data.component;
-
-            if (self.searchbox && self.searchbox.ngSearchBoxFilterSelectors && self.searchbox.ngSearchBoxFilterSelectors.length) {
-
-              self.selectors = self.searchbox.ngSearchBoxFilterSelectors;
-
-            }
-
-          break;
-
-        }
-
-        // self
-        //   .changeDetectionRef
-        //   .detectChanges();
-
-      });
+    if (this.searchbox && this.searchbox.ngSearchBoxFilterSelectors && this.searchbox.ngSearchBoxFilterSelectors.length) {
+      this.selectors = this.searchbox.ngSearchBoxFilterSelectors;
+    }
 
     this
       .getDefaultSelector();

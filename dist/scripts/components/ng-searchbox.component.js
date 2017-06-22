@@ -88,6 +88,7 @@ var NgSearchboxComponent = (function () {
             self
                 .searchParams
                 .filters = filters;
+            self.searchParams.operators = filters.map(function (f) { return f.$$operator; }).filter(function (o) { return o != null; });
             if (self.ngSearchBoxConfig && self.
                 ngSearchBoxConfig
                 .delay) {
