@@ -238,6 +238,8 @@ export class NgSearchboxFilteringComponent implements AfterViewInit {
 
   public addFilter(event: MouseEvent, name: string): void {
 
+    console.log("addFilter", name);
+
     let self: NgSearchboxFilteringComponent = <NgSearchboxFilteringComponent>this;
 
     if (this.availableFilters) {

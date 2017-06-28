@@ -36,11 +36,42 @@ import {
   NgSearchboxFilterOperators
 } from './components/ng-searchbox-filter-operators.component';
 
+import {
+  NgSearchboxAutoSuggestions
+} from './components/ng-searchbox-auto-suggestions.component';
+
+import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
+import {
+  EaAutoComplete
+} from './commons/ea-autocomplete/component';
+import { StripTagsPipe } from 'angular-pipes/src/string/strip-tags.pipe';
+
+import { SafeHtmlPipe } from './commons/safe-html-pipe';
+import {
+  MaterialModule
+  // OverlayContainer,
+  // FullscreenOverlayContainer,
+  // MdSelectionModule, MdIconModule,
+  // MdNativeDateModule, MdSliderModule,
+  // MdRadioModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
 
   'imports': [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AutoCompleteModule,
+    MaterialModule,
+    BrowserAnimationsModule
+    // OverlayContainer,
+    // FullscreenOverlayContainer,
+    // MdSelectionModule,
+    // MdIconModule,
+    // MdNativeDateModule,
+    // MdSliderModule,
+    // MdRadioModule
   ],
 
   'declarations': [
@@ -49,10 +80,15 @@ import {
     NgSearchboxAddedFiltersWrapper,
     NgSearchboxAddedFilter,
     NgSearchboxFilterSelectors,
-    NgSearchboxFilterOperators
+    NgSearchboxFilterOperators,
+    NgSearchboxAutoSuggestions,
+    EaAutoComplete,
+    StripTagsPipe,
+    SafeHtmlPipe,
   ],
 
   'providers': [
+    StripTagsPipe,
     {
 
       'provide': Window,

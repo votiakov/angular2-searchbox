@@ -1,0 +1,101 @@
+
+<span
+  [ngClass]="{'ui-autocomplete ui-widget':true,'ui-autocomplete-dd':dropdown,'ui-autocomplete-multiple':multiple}"
+  [ngStyle]="style"
+  [class]="styleClass"
+>
+  <md-input-container *ngIf="!multiple" [floatPlaceholder]="floatPlaceholder">
+    <input
+      mdInput
+      #in
+      [attr.type]="type"
+      [attr.id]="inputId"
+      [ngStyle]="inputStyle"
+      [class]="inputStyleClass"
+      autocomplete="off"
+      [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'"
+      (click)="onInputClick($event)"
+      [value]="(value ? (field ? getValue(value, field) : value) : null) | stripTags"
+      (input)="onInput($event)"
+      (keydown)="onKeydown($event)"
+      (focus)="onInputFocus($event)"
+      (blur)="onInputBlur($event)"
+      [placeholder]="placeholder"
+      [attr.size]="size"
+      [attr.maxlength]="maxlength"
+      [attr.tabindex]="tabindex"
+      [readonly]="readonly"
+      [disabled]="disabled"
+      [ngClass]="{'ui-autocomplete-input':true,'ui-autocomplete-dd-input':dropdown}"
+      [required]="required"
+    >
+    <md-icon (click)="clearSelection()" class="clear-selection-icon" *ngIf="!!value" [ngClass]="{'disabled': disabled}">clear</md-icon>
+    <md-icon class="dropdown-icon" [ngClass]="{'disabled': disabled}">keyboard_arrow_down</md-icon>
+  </md-input-container>
+
+  <md-input-container *ngIf="multiple" [floatPlaceholder]="shouldFloatMultiPlaceholder()">
+    <ul
+      *ngIf="multiple"
+      #multiContainer
+      class="ui-autocomplete-multiple-container ui-widget ui-inputtext ui-state-default ui-corner-all"
+      [ngClass]="{'ui-state-disabled':disabled,'ui-state-focus':focus}" (click)="multiIn.focus()"
+    >
+      <li #token *ngFor="let val of value" [ngClass]="{'ui-autocomplete-token': true, 'ui-state-highlight': !notSelectableFn(val), 'ui-autocomplete-not-selectable': notSelectableFn(val)}">
+        <md-icon class="ui-autocomplete-token-icon" (click)="removeItem(token)" *ngIf="!disabled">clear</md-icon>
+        <span *ngIf="!selectedItemTemplate" class="ui-autocomplete-token-label">{{val ? (field ? getValue(val, field) : val) : null | stripTags}}</span>
+        <ng-template *ngIf="selectedItemTemplate" [pTemplateWrapper]="selectedItemTemplate" [item]="val"></ng-template>
+      </li>
+      <li class="ui-autocomplete-input-token">
+          <input
+            #multiIn
+            mdInput
+            [attr.type]="type"
+            [attr.id]="inputId"
+            [disabled]="disabled"
+            [placeholder]="placeholder"
+            [attr.tabindex]="tabindex"
+            (input)="onInput($event)"
+            (click)="onInputClick($event)"
+            (keydown)="onKeydown($event)"
+            (focus)="onInputFocus($event)"
+            (blur)="onInputBlur($event)"
+            autocomplete="off"
+          >
+      </li>
+    </ul>
+  </md-input-container>
+
+<!--   <button
+    type="button"
+    pButton
+    icon=" "
+    class="ui-autocomplete-dropdown"
+    [disabled]="disabled"
+    (click)="handleDropdownClick($event)"
+    *ngIf="dropdown"
+  >
+    <md-icon>keyboard_arrow_down</md-icon>
+  </button> -->
+
+  <div
+    #panel
+    class="ui-autocomplete-panel ui-widget-content ui-shadow"
+    [style.display]="panelVisible ? 'block' : 'none'"
+    [style.width]="appendTo ? 'auto' : '100%'"
+    [style.max-height]="scrollHeight"
+  >
+    <ul class="ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-helper-reset" *ngIf="panelVisible">
+      <li
+        *ngFor="let option of suggestions; let idx = index"
+        [ngClass]="{'ui-autocomplete-list-item':true,'ui-state-highlight':(highlightOption==option && !notSelectableFn(option)),'ui-autocomplete-not-selectable': notSelectableFn(option)}"
+        (mouseenter)="highlightOption=option"
+        (mouseleave)="highlightOption=null"
+        (click)="selectItem(option, $event)"
+      >
+        <span *ngIf="!itemTemplate" [innerHtml]="(field ? option[field] : option) | safeHtml"></span>
+        <ng-template *ngIf="itemTemplate" [pTemplateWrapper]="itemTemplate" [item]="option" [index]="idx"></ng-template>
+      </li>
+      <li *ngIf="noResults && emptyMessage" class="ui-autocomplete-list-item ui-corner-all">{{emptyMessage}}</li>
+    </ul>
+  </div>
+</span>

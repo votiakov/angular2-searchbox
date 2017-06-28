@@ -1,0 +1,31 @@
+import { ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { DomHandler } from 'primeng/components/dom/domhandler';
+import { ObjectUtils } from 'primeng/components/utils/ObjectUtils';
+import { AutoComplete } from 'primeng/components/autocomplete/autocomplete';
+import { StripTagsPipe } from 'angular-pipes/src/string/strip-tags.pipe';
+export declare class EaAutoComplete extends AutoComplete {
+    private stripTags;
+    floatPlaceholder: any;
+    key: any;
+    required: any;
+    notSelectable: any;
+    multi: any;
+    _selectedItems: any[];
+    private suggestionsMemo;
+    constructor(el: ElementRef, domHandler: DomHandler, renderer: Renderer2, objectUtils: ObjectUtils, cd: ChangeDetectorRef, stripTags: StripTagsPipe);
+    notSelectableFn: (item: any) => any;
+    selectedItems: any[];
+    onInput(event: any): void;
+    shouldFloatMultiPlaceholder(): any;
+    selectItem(option: any, event?: Event): any;
+    isSelected(val: any): boolean;
+    writeValue(value: any): void;
+    removeItem(item: any): void;
+    onInputBlur(event: any): void;
+    onInputFocus(event: any): void;
+    search(event: any, searchTerm?: any): void;
+    getValue(value: any, field: any): any;
+    align(): void;
+    clearSelection(): void;
+    private absolutePositionLeft(element, target);
+}

@@ -83,10 +83,10 @@ var AppComponent = (function () {
                 'name': 'color',
                 'displayName': 'Vendor Color',
                 'suggestedValues': [
-                    'Yellow',
-                    'Red',
-                    'Black',
-                    'Green'
+                    { label: 'Yellow', value: "some-id-uuid-123-123" },
+                    { label: 'Red', value: "some-id-uuid-123-123" },
+                    { label: 'Black', value: "some-id-uuid-123-123" },
+                    { label: 'Green', value: "some-id-uuid-123-123" }
                 ],
                 'restrictedSuggestedValues': true,
                 'root': 'Product'

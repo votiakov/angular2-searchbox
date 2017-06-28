@@ -1,0 +1,11 @@
+ea-autoComplete(
+  *ngIf="filter.suggestedValues",
+  [suggestions]="filter.suggestedValues",
+  field="label",
+  key="value",
+  dataKey="value",
+  appendTo="body",
+  name="suggestAutoComplete",
+  size="100",
+  (onSelect)="takeSuggestion($event)"
+)

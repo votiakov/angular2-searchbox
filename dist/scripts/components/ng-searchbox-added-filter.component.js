@@ -36,6 +36,7 @@ var NgSearchboxAddedFilter = (function () {
         this.Filtering = filteringSvc;
         this.Event = searchbox
             .Event;
+        filter.showSelectors = true;
         this.filter = filter;
         this.searchbox = searchbox;
         this
@@ -44,6 +45,7 @@ var NgSearchboxAddedFilter = (function () {
     };
     NgSearchboxAddedFilter.prototype.toggleActivation = function (force) {
         var _this = this;
+        console.log("toggleActivation", this.filter);
         var self = this;
         if (typeof this
             .filter
@@ -92,6 +94,7 @@ var NgSearchboxAddedFilter = (function () {
     };
     NgSearchboxAddedFilter.prototype.openFilter = function () {
         var _this = this;
+        console.log("openFilter", this.filter);
         if (!this.filter.editing) {
             this
                 .filter
@@ -135,11 +138,30 @@ var NgSearchboxAddedFilter = (function () {
         }
         return this;
     };
+    NgSearchboxAddedFilter.prototype.valueChangeAndCloseFilter = function (val) {
+        this.valueChange(val);
+        this.closeFilter();
+    };
+    NgSearchboxAddedFilter.prototype.toggleShowSelectors = function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        this.filter.showSelectors = !this.filter.showSelectors;
+    };
     NgSearchboxAddedFilter.prototype.valueChange = function (val) {
+        if (typeof (val) === 'string') {
+            val = { label: val, value: val };
+        }
+        console.log(val);
+        if (val.label !== this.v) {
+            console.log(val.label);
+            this.v = val.label;
+            console.log(JSON.stringify(this.v));
+            console.log(this.v);
+        }
         this
             .filter
-            .value = val;
-        if (val !== this.pv) {
+            .value = val.value;
+        if (val.value !== this.pv) {
             this
                 .Event
                 .onFilterChanged(this.filter);

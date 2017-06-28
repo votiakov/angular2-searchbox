@@ -50,9 +50,13 @@ var NgSearchboxFilterSelectors = (function () {
                 .Event
                 .onFilterSelectorChanged(selector, self.filter);
         }
-        this
-            .ngAddedFilter
-            .setFocus();
+        console.log(JSON.parse(JSON.stringify(self.filter)));
+        if (!self.filter.value) {
+            this
+                .ngAddedFilter
+                .setFocus();
+        }
+        self.filter.showSelectors = false;
     };
     NgSearchboxFilterSelectors.prototype.getDefaultSelector = function () {
         var self = this;

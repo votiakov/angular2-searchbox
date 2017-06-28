@@ -20,17 +20,18 @@ div.ng-searchbox-added-filter(
     )
       span(
         class="selector-type",
-        [innerText]="filter.selector.name"
+        [innerText]="filter.selector.name",
+        (click)="toggleShowSelectors($event)"
       )
     template(
       [ngIf]="filter && filter.value && !filter.editing"
     )
       span(
-        [innerText]="filter.value"
+        [innerText]="v"
         class="filter-value"
       )
     template(
-      [ngIf]="filter && filter.editing"
+      [ngIf]="filter && filter.editing && !filter.suggestedValues"
     )
       input(
         type="text",
@@ -38,6 +39,15 @@ div.ng-searchbox-added-filter(
         (ngModelChange)="valueChange($event);",
         (keydown)="onKeyDown($event);",
         (keyup)="onKeyUp($event);"
+      )
+
+    template(
+      [ngIf]="filter && filter.editing && !!filter.suggestedValues"
+    )
+      ng-searchbox-auto-suggestions(
+        [searchbox]="searchbox",
+        [filter]="filter",
+        (valueChange)="valueChangeAndCloseFilter($event)"
       )
     i(
       class="fa fa-times",

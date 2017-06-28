@@ -16,7 +16,9 @@
 
         '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
 
-        '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+        // '@angular/platform-browser': 'npm:@angular/platform-browser',
+
+        // '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
 
         '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
 
@@ -34,7 +36,24 @@
 
         'rxjs': 'npm:rxjs',
 
-        'json': 'npm:systemjs-plugin-json/json.js'
+        'json': 'npm:systemjs-plugin-json/json.js',
+
+        'primeng': 'npm:primeng',
+
+        'angular-pipes': 'npm:angular-pipes',
+
+        '@angular/material': 'npm:@angular/material/bundles/material.umd.min.js',
+
+        '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+
+        // '@angular/animations': 'npm:@angular/animations/bundles/animations-browser.umd.min.js',
+
+        '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+        '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+        '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+        '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+
+        '~primeng': 'npm:primeng'
 
       },
 
@@ -98,7 +117,19 @@
 
           'defaultExtension': 'js'
 
+        },
+
+        'primeng': {
+          'defaultExtension': 'js'
+        },
+
+        'angular-pipes': {
+          'defaultExtension': 'js'
         }
+
+        // '@angular/platform-browser': {
+        //   'defaultExtension': 'js'
+        // }
 
       }
 

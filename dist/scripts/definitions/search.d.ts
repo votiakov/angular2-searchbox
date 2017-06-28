@@ -41,7 +41,10 @@ export declare namespace Search {
         middleware?: (Function | Function[]);
         multi?: boolean;
         validation?: string;
-        suggestedValues?: (string | string[]);
+        suggestedValues?: (string | Array<{
+            label: string;
+            value: string;
+        }>);
         suggestedDataPoint?: string;
         restrictedSuggestedValues?: boolean;
         reloadOnCreate?: boolean;
@@ -76,6 +79,7 @@ export declare namespace ModifiedSearch {
         active?: boolean;
         value?: string;
         editing?: boolean;
+        showSelectors?: boolean;
         uuid?: string;
         condition?: string;
         selector?: Search.Selector;

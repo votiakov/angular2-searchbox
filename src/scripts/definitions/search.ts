@@ -98,7 +98,8 @@ export namespace Search {
 
     validation?: string;
 
-    suggestedValues?: (string|string[]);
+    // suggestedValues?: (string|string[]);
+    suggestedValues?: (string | Array<{ label: string, value: string }>);
 
     suggestedDataPoint?: string;
 
@@ -167,6 +168,8 @@ export namespace ModifiedSearch {
     value?: string;
 
     editing?: boolean;
+
+    showSelectors?: boolean;
 
     uuid?: string;
 

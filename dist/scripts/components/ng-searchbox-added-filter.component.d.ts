@@ -22,7 +22,15 @@ export declare class NgSearchboxAddedFilter {
     openFilter(): NgSearchboxAddedFilter;
     setFocus(): NgSearchboxAddedFilter;
     closeFilter(): NgSearchboxAddedFilter;
-    valueChange(val: string): void;
+    valueChangeAndCloseFilter(val: {
+        label: string;
+        value: string;
+    } | string): void;
+    toggleShowSelectors(event: Event): void;
+    valueChange(val: {
+        label: string;
+        value: string;
+    } | string): void;
     onKeyDown(event: any): void;
     onKeyUp(event: KeyboardEvent): void;
     windowClicked(event: MouseEvent): void;

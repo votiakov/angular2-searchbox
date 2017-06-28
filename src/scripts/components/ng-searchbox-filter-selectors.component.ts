@@ -94,9 +94,16 @@ export class NgSearchboxFilterSelectors implements AfterViewInit {
 
     }
 
-    this
-      .ngAddedFilter
-      .setFocus();
+    console.log(JSON.parse(JSON.stringify(self.filter)));
+    if (!self.filter.value) {
+      this
+        .ngAddedFilter
+        .setFocus();
+    }
+
+
+    self.filter.showSelectors = false;
+
 
   }
 

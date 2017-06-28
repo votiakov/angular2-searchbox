@@ -93,6 +93,8 @@ export class NgSearchboxAddedFilter {
     this.Event = searchbox
       .Event;
 
+    filter.showSelectors = true;
+
     this.filter = filter;
 
     this.searchbox = searchbox;
@@ -105,6 +107,8 @@ export class NgSearchboxAddedFilter {
   }
 
   public toggleActivation (force?: boolean): void {
+
+    console.log("toggleActivation", this.filter);
 
     let self: NgSearchboxAddedFilter = <NgSearchboxAddedFilter>this;
 
@@ -174,6 +178,8 @@ export class NgSearchboxAddedFilter {
   }
 
   public openFilter (): NgSearchboxAddedFilter {
+
+    console.log("openFilter", this.filter);
 
     if (!this.filter.editing) {
 
@@ -246,13 +252,36 @@ export class NgSearchboxAddedFilter {
 
   }
 
-  public valueChange (val: string): void {
+  public valueChangeAndCloseFilter(val: { label: string, value: string } | string): void {
+    this.valueChange(val);
+    this.closeFilter();
+  }
+
+  public toggleShowSelectors(event: Event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    this.filter.showSelectors = !this.filter.showSelectors;
+  }
+
+  public valueChange (val: { label: string, value: string } | string): void {
+    if (typeof(val) === 'string') {
+      val = { label: val, value: val }
+    }
+    console.log(val);
+
+    if (val.label !== this.v) {
+      console.log(val.label);
+      this.v = val.label;
+      console.log(JSON.stringify(this.v));
+      console.log(this.v);
+    }
 
     this
       .filter
-      .value = val;
+      .value = val.value;
 
-    if (val !== this.pv) {
+    if (val.value !== this.pv) {
 
       this
         .Event

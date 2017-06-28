@@ -15,6 +15,13 @@ var ng_searchbox_added_filters_wrapper_component_1 = require("./components/ng-se
 var ng_searchbox_added_filter_component_1 = require("./components/ng-searchbox-added-filter.component");
 var ng_searchbox_filter_selectors_component_1 = require("./components/ng-searchbox-filter-selectors.component");
 var ng_searchbox_filter_operators_component_1 = require("./components/ng-searchbox-filter-operators.component");
+var ng_searchbox_auto_suggestions_component_1 = require("./components/ng-searchbox-auto-suggestions.component");
+var autocomplete_1 = require("primeng/components/autocomplete/autocomplete");
+var component_1 = require("./commons/ea-autocomplete/component");
+var strip_tags_pipe_1 = require("angular-pipes/src/string/strip-tags.pipe");
+var safe_html_pipe_1 = require("./commons/safe-html-pipe");
+var material_1 = require("@angular/material");
+var animations_1 = require("@angular/platform-browser/animations");
 var NgSearchboxModule = (function () {
     function NgSearchboxModule() {
     }
@@ -24,7 +31,17 @@ NgSearchboxModule = __decorate([
     core_1.NgModule({
         'imports': [
             common_1.CommonModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            autocomplete_1.AutoCompleteModule,
+            material_1.MaterialModule,
+            animations_1.BrowserAnimationsModule
+            // OverlayContainer,
+            // FullscreenOverlayContainer,
+            // MdSelectionModule,
+            // MdIconModule,
+            // MdNativeDateModule,
+            // MdSliderModule,
+            // MdRadioModule
         ],
         'declarations': [
             ng_searchbox_component_1.NgSearchboxComponent,
@@ -32,9 +49,14 @@ NgSearchboxModule = __decorate([
             ng_searchbox_added_filters_wrapper_component_1.NgSearchboxAddedFiltersWrapper,
             ng_searchbox_added_filter_component_1.NgSearchboxAddedFilter,
             ng_searchbox_filter_selectors_component_1.NgSearchboxFilterSelectors,
-            ng_searchbox_filter_operators_component_1.NgSearchboxFilterOperators
+            ng_searchbox_filter_operators_component_1.NgSearchboxFilterOperators,
+            ng_searchbox_auto_suggestions_component_1.NgSearchboxAutoSuggestions,
+            component_1.EaAutoComplete,
+            strip_tags_pipe_1.StripTagsPipe,
+            safe_html_pipe_1.SafeHtmlPipe,
         ],
         'providers': [
+            strip_tags_pipe_1.StripTagsPipe,
             {
                 'provide': Window,
                 'useValue': window

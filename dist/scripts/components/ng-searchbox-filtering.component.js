@@ -114,6 +114,7 @@ var NgSearchboxFilteringComponent = (function () {
         return;
     };
     NgSearchboxFilteringComponent.prototype.addFilter = function (event, name) {
+        console.log("addFilter", name);
         var self = this;
         if (this.availableFilters) {
             this

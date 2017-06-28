@@ -58,6 +58,25 @@ export const NgSearchboxAddedFilterStyle: string[] = [`:host > div.ng-searchbox-
   margin-right: 5px;
 }
 `];
+export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
+  padding: 0 0 8px 7px;
+  background: #E1F0FD;
+  border-radius: 6px;
+  margin-top: 7px;
+  margin-bottom: 4px;
+  display: none;
+}
+:host.active {
+  display: block;
+}
+:host div.ng-searchbox-added-filters {
+  display: none;
+}
+`];
+export const NgSearchboxAutoSuggestionsStyle: string[] = [`:host div.ng-searchbox-auto-suggestions {
+  display: inline-block;
+}
+`];
 export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
   float: left;
 }
@@ -84,21 +103,6 @@ export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
 }
 :host div.ng-searchbox-added-filter-operator div.ng-searchbox-filter-operators-wrapper {
   position: absolute;
-}
-`];
-export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
-  padding: 0 0 8px 7px;
-  background: #E1F0FD;
-  border-radius: 6px;
-  margin-top: 7px;
-  margin-bottom: 4px;
-  display: none;
-}
-:host.active {
-  display: block;
-}
-:host div.ng-searchbox-added-filters {
-  display: none;
 }
 `];
 export const NgSearchboxFilterSelectorsStyle: string[] = [`:host div.ng-searchbox-filter-selectors {
@@ -218,7 +222,9 @@ export const NgSearchboxFilteringStyle: string[] = [`:host {
   margin-left: 10px;
 }
 `];
-export const NgSearchboxStyle: string[] = [`.ng-clearfix:after {
+export const NgSearchboxStyle: string[] = [`@import url(../../node_modules/primeng/resources/primeng.min.css);
+@import url(../../node_modules/primeng/resources/themes/omega/theme.css);
+.ng-clearfix:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -229,6 +235,60 @@ export const NgSearchboxStyle: string[] = [`.ng-clearfix:after {
 
 * html .ng-clearfix {
   height: 1%;
+}
+
+.ui-autocomplete {
+  display: block;
+}
+.ui-autocomplete .ui-autocomplete-input {
+  padding-right: 30px;
+}
+.ui-autocomplete .clear-selection-icon {
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+.ui-autocomplete .clear-selection-icon.disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.ui-autocomplete .dropdown-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ui-autocomplete .ui-inputtext.ui-state-focus, .ui-autocomplete .ui-inputtext:focus {
+  box-shadow: none;
+}
+.ui-autocomplete .ui-state-disabled, .ui-autocomplete .ui-widget:disabled {
+  opacity: 1;
+  filter: Alpha(Opacity=100);
+}
+.ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container {
+  display: block;
+  border: 0px;
+  background: transparent;
+  overflow: visible;
+  padding-left: 0px;
+}
+.ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container .ui-autocomplete-token {
+  background: rgba(0, 0, 0, 0.05);
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 3px;
+  margin-right: 4px;
+  margin-top: -3px;
+}
+.ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container .ui-autocomplete-token-label {
+  margin-right: 0.9em;
+}
+.ui-autocomplete.ui-autocomplete-multiple .mat-input-underline {
+  margin-top: -4px;
+}
+
+.ui-autocomplete-not-selectable {
+  color: #c0c0c0;
+  cursor: default !important;
 }
 
 :host {
@@ -272,7 +332,9 @@ export const NgSearchboxStyle: string[] = [`.ng-clearfix:after {
   margin-right: 0;
 }
 `];
-export const GlobalStyle: string[] = [`.ng-clearfix:after {
+export const GlobalStyle: string[] = [`@import url(../../node_modules/primeng/resources/primeng.min.css);
+@import url(../../node_modules/primeng/resources/themes/omega/theme.css);
+.ng-clearfix:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -283,5 +345,59 @@ export const GlobalStyle: string[] = [`.ng-clearfix:after {
 
 * html .ng-clearfix {
   height: 1%;
+}
+
+.ui-autocomplete {
+  display: block;
+}
+.ui-autocomplete .ui-autocomplete-input {
+  padding-right: 30px;
+}
+.ui-autocomplete .clear-selection-icon {
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+.ui-autocomplete .clear-selection-icon.disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.ui-autocomplete .dropdown-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.ui-autocomplete .ui-inputtext.ui-state-focus, .ui-autocomplete .ui-inputtext:focus {
+  box-shadow: none;
+}
+.ui-autocomplete .ui-state-disabled, .ui-autocomplete .ui-widget:disabled {
+  opacity: 1;
+  filter: Alpha(Opacity=100);
+}
+.ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container {
+  display: block;
+  border: 0px;
+  background: transparent;
+  overflow: visible;
+  padding-left: 0px;
+}
+.ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container .ui-autocomplete-token {
+  background: rgba(0, 0, 0, 0.05);
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 3px;
+  margin-right: 4px;
+  margin-top: -3px;
+}
+.ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container .ui-autocomplete-token-label {
+  margin-right: 0.9em;
+}
+.ui-autocomplete.ui-autocomplete-multiple .mat-input-underline {
+  margin-top: -4px;
+}
+
+.ui-autocomplete-not-selectable {
+  color: #c0c0c0;
+  cursor: default !important;
 }
 `];
