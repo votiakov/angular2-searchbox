@@ -105,7 +105,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
 
   'exports': [
-    NgSearchboxComponent
+    NgSearchboxComponent,
+    StripTagsPipe
   ]
 
 })

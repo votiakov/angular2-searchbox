@@ -1,20 +1,5 @@
 'use strict';
 
-export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
-  padding: 0 0 8px 7px;
-  background: #E1F0FD;
-  border-radius: 6px;
-  margin-top: 7px;
-  margin-bottom: 4px;
-  display: none;
-}
-:host.active {
-  display: block;
-}
-:host div.ng-searchbox-added-filters {
-  display: none;
-}
-`];
 export const NgSearchboxAddedFilterStyle: string[] = [`:host > div.ng-searchbox-added-filter {
   display: block;
   float: left;
@@ -73,8 +58,19 @@ export const NgSearchboxAddedFilterStyle: string[] = [`:host > div.ng-searchbox-
   margin-right: 5px;
 }
 `];
-export const NgSearchboxAutoSuggestionsStyle: string[] = [`:host div.ng-searchbox-auto-suggestions {
-  display: inline-block;
+export const NgSearchboxAddedFiltersWrapperStyle: string[] = [`:host {
+  padding: 0 0 8px 7px;
+  background: #E1F0FD;
+  border-radius: 6px;
+  margin-top: 7px;
+  margin-bottom: 4px;
+  display: none;
+}
+:host.active {
+  display: block;
+}
+:host div.ng-searchbox-added-filters {
+  display: none;
 }
 `];
 export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
@@ -105,95 +101,8 @@ export const NgSearchboxFilterOperatorsStyle: string[] = [`:host {
   position: absolute;
 }
 `];
-export const NgSearchboxFilteringStyle: string[] = [`:host {
-  display: block;
-}
-:host span.filtering-selection {
-  border-right: 1px solid rgba(4, 4, 4, 0.3);
-  margin-top: 0;
-  cursor: pointer;
-  opacity: 0.75;
-  margin-left: 0;
-  font-size: 16px;
-  font-weight: normal;
-  margin-right: 8px;
-  display: block;
-  text-align: center;
-  width: 20px;
-  padding: 11px 8px 11px 8px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  background: #cee8ff;
-  background: -moz-linear-gradient(top, #cee8ff 0%, #b5dcff 100%);
-  background: -webkit-linear-gradient(top, #cee8ff 0%, #b5dcff 100%);
-  background: linear-gradient(to bottom, #cee8ff 0%, #b5dcff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee8ff', endColorstr='#b5dcff',GradientType=0 );
-  transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  position: absolute;
-  z-index: 2;
-}
-:host span.filtering-selection.active {
-  background: #b5dcff;
-  background: -moz-linear-gradient(top, #b5dcff 0%, #cee8ff 100%);
-  background: -webkit-linear-gradient(top, #b5dcff 0%, #cee8ff 100%);
-  background: linear-gradient(to bottom, #b5dcff 0%, #cee8ff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5dcff', endColorstr='#cee8ff',GradientType=0 );
-}
-:host ul {
-  position: absolute;
-  z-index: 6;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  overflow-y: scroll;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  left: 0;
-  top: 0;
-}
-:host ul li {
-  font-size: 14px;
-  margin-right: 8px;
-  padding: 5px 10px;
-  border-bottom: 2px solid #FFF;
-  cursor: pointer;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: background 0.25s ease-in-out;
-  -moz-transition: background 0.25s ease-in-out;
-  -webkit-transition: background 0.25s ease-in-out;
-}
-:host ul li:last-child {
-  border-bottom: none;
-}
-:host ul li.root-filter {
-  background: #CEE8FF;
-}
-:host ul li.child-filter {
-  background: #FFDFDF;
-}
-:host ul li.child-filter:hover {
-  background: #FFD6D6;
-}
-:host ul li i.fa-filter {
-  opacity: 0.45;
-  margin-right: 5px;
-}
-:host ul li i.fa-level-up, :host ul li i.fa-level-down {
-  margin-right: 4px;
-}
-:host ul li:hover span.ng-filter-display-name {
-  font-weight: bold;
-}
-:host ul li span.ng-filtered-from {
-  opacity: 0.6;
-  font-size: 12px;
-  margin-left: 10px;
+export const NgSearchboxAutoSuggestionsStyle: string[] = [`:host div.ng-searchbox-auto-suggestions {
+  display: inline-block;
 }
 `];
 export const NgSearchboxFilterSelectorsStyle: string[] = [`:host div.ng-searchbox-filter-selectors {
@@ -328,6 +237,97 @@ export const NgSearchboxStyle: string[] = [`.ng-clearfix:after {
 }
 :host div.ng-searchbox-wrapper div.ng-searchbox-buttons i:last-child {
   margin-right: 0;
+}
+`];
+export const NgSearchboxFilteringStyle: string[] = [`:host {
+  display: block;
+}
+:host span.filtering-selection {
+  border-right: 1px solid rgba(4, 4, 4, 0.3);
+  margin-top: 0;
+  cursor: pointer;
+  opacity: 0.75;
+  margin-left: 0;
+  font-size: 16px;
+  font-weight: normal;
+  margin-right: 8px;
+  display: block;
+  text-align: center;
+  width: 20px;
+  padding: 11px 8px 11px 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background: #cee8ff;
+  background: -moz-linear-gradient(top, #cee8ff 0%, #b5dcff 100%);
+  background: -webkit-linear-gradient(top, #cee8ff 0%, #b5dcff 100%);
+  background: linear-gradient(to bottom, #cee8ff 0%, #b5dcff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee8ff', endColorstr='#b5dcff',GradientType=0 );
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  position: absolute;
+  z-index: 2;
+}
+:host span.filtering-selection.active {
+  background: #b5dcff;
+  background: -moz-linear-gradient(top, #b5dcff 0%, #cee8ff 100%);
+  background: -webkit-linear-gradient(top, #b5dcff 0%, #cee8ff 100%);
+  background: linear-gradient(to bottom, #b5dcff 0%, #cee8ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5dcff', endColorstr='#cee8ff',GradientType=0 );
+}
+:host ul {
+  position: absolute;
+  z-index: 6;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  left: 0;
+  top: 0;
+}
+:host ul li {
+  font-size: 14px;
+  margin-right: 8px;
+  padding: 5px 10px;
+  border-bottom: 2px solid #FFF;
+  cursor: pointer;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: background 0.25s ease-in-out;
+  -moz-transition: background 0.25s ease-in-out;
+  -webkit-transition: background 0.25s ease-in-out;
+}
+:host ul li:last-child {
+  border-bottom: none;
+}
+:host ul li.root-filter {
+  background: #CEE8FF;
+}
+:host ul li.child-filter {
+  background: #FFDFDF;
+}
+:host ul li.child-filter:hover {
+  background: #FFD6D6;
+}
+:host ul li i.fa-filter {
+  opacity: 0.45;
+  margin-right: 5px;
+}
+:host ul li i.fa-level-up, :host ul li i.fa-level-down {
+  margin-right: 4px;
+}
+:host ul li:hover span.ng-filter-display-name {
+  font-weight: bold;
+}
+:host ul li span.ng-filtered-from {
+  opacity: 0.6;
+  font-size: 12px;
+  margin-left: 10px;
 }
 `];
 export const GlobalStyle: string[] = [`.ng-clearfix:after {

@@ -66,7 +66,8 @@ NgSearchboxModule = __decorate([
             }
         ],
         'exports': [
-            ng_searchbox_component_1.NgSearchboxComponent
+            ng_searchbox_component_1.NgSearchboxComponent,
+            strip_tags_pipe_1.StripTagsPipe
         ]
     })
 ], NgSearchboxModule);
